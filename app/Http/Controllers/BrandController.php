@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Auth;
 use Illuminate\Http\Request;
 use App\Models\Brand;
 use Illuminate\Support\Carbon;
@@ -148,4 +148,8 @@ class BrandController extends Controller
 
     }
 
+    public function Logout(){
+        Auth::logout();
+        return Redirect() -> route('login')->with('success', 'user logout successfully');
+    }
 }
