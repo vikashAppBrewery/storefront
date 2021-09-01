@@ -6,7 +6,7 @@
         <div class="container">
             <div class="row">
                 <h4 style="margin-left:20px">Home About</h4>
-                <a style="padding-left:20px; margin-bottom:10px" href="{{route('add.slider')}}"><button class="btn btn-info">Add About</button></a>
+                <a style="padding-left:20px; margin-bottom:10px" href="{{route('add.about')}}"><button class="btn btn-info">Add About</button></a>
                 <br><br>
                 <div class="col-md-12">
                     <div class="card">
@@ -14,7 +14,7 @@
                         @if(session('success'))
                         <div class="alert alert-success alert-dismissible fade show" role="alert">
                         <strong>{{session('success')}}</strong>
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        <button type="button" class="btn btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
                         @endif
                         <div class="card-header">All About Data</div>
