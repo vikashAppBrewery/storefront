@@ -120,4 +120,13 @@ Route::get('/admin/contact', [ContactController::class, 'AdminContact'])->name('
 
 Route::get('/admin/add/contact', [ContactController::class, 'AdminAddContact'])->name('add.contact');
 
+Route::get('contact/delete/{id}', [ContactController::class, 'AdminDeleteContact']);
+
 Route::post('/admin/store/contact', [ContactController::class, 'AdminStoreContact'])->name('store.contact');
+
+Route::get('contact/edit/{id}', [ContactController::class, 'AdminEditContact']);
+
+
+// contact page - front
+
+Route::get('/contact', [ContactController::class, 'Contact'])->name('contact');
