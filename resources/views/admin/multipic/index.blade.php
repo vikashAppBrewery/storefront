@@ -1,12 +1,6 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Multi Image <b></b>
-            <b style="float:right">
-                <span class="badge bg-danger"></span>
-            </b>
-        </h2>
-    </x-slot>
+@extends('admin.admin_master')
+
+@section('admin')
 
     @if(session('success'))
                         <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -24,6 +18,10 @@
                             <div class="col-md-4 mt-5 mr-2">
                                 <div class="card">
                                     <img src="{{asset($multi->image)}}" alt="multi_image">
+                                    <div class="card-body">
+                                    <a href="{{url('multi/delete/'.$multi->id)}}"><button class="btn btn-danger">Delete</button></a>
+                                    </div>
+                                    
                                 </div>
                             </div>
                         @endforeach
@@ -58,6 +56,7 @@
         
                
                
-        </div>
+
     </div>
-</x-app-layout>
+
+    @endsection

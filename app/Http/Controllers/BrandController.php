@@ -123,6 +123,15 @@ class BrandController extends Controller
         return view('admin.multipic.index', compact('images'));
     }
 
+    public function MultiDelete($id){
+        $image = Multipic::find($id);
+        $old_image = $image->image;
+        unlink($old_image);
+
+        Multipic::find($id)->delete();
+        return Redirect()->back()->with('success', 'Image deleted successfully');
+    }
+
     public function StoreImg(Request $request){
 
         $image = $request->file('image');
