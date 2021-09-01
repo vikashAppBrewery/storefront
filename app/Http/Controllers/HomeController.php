@@ -40,4 +40,13 @@ class HomeController extends Controller
         return Redirect()->route('home.slider')->with('success', 'slider Inserted successfully');
 
     }
+
+    public function Delete($id){
+        $image = slider::find($id);
+        $old_image = $image->image;
+        unlink($old_image);
+
+        slider::find($id)->delete();
+        return Redirect()->back()->with('success', 'Brand deleted successfully');    
+    }
 }

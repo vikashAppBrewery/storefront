@@ -5,6 +5,7 @@ use App\Http\Controllers\AboutusController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AboutController;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 
@@ -86,3 +87,9 @@ Route::get('/home/slider', [HomeController::class, 'HomeSlider'])->name('home.sl
 Route::get('/add/slider', [HomeController::class, 'AddSlider'])->name('add.slider');
 
 Route::post('/store/slider', [HomeController::class, 'StoreSlider'])->name('store.slider');
+
+Route::get('slider/delete/{id}', [HomeController::class, 'Delete']);
+
+// about us section
+
+Route::get('/home/about', [AboutController::class, 'HomeAbout'])->name('home.about');
