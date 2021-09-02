@@ -135,15 +135,15 @@
                   <!-- User Account -->
                   <li class="dropdown user-menu">
                     <button href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                      <img src="{{asset('backend/assets/img/user/user.png')}}" class="user-image" alt="User Image" />
-                      <span class="d-none d-lg-inline-block">Abdus Salam</span>
+                      <img src="{{Auth::user()->profile_photo_url }}" class="user-image" alt="User Image" />
+                      <span class="d-none d-lg-inline-block">{{Auth::user()->name}}</span>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-right">
                       <!-- User image -->
                       <li class="dropdown-header">
-                        <img src="{{asset('backend/assets/img/user/user.png')}}" class="img-circle" alt="User Image" />
+                        <img src="{{ Auth::user()->profile_photo_url }}" class="img-circle" alt="User Image" />
                         <div class="d-inline-block">
-                          Abdus Salam <small class="pt-1">abdus@gmail.com</small>
+                        {{Auth::user()->name}}<small class="pt-1">{{Auth::user()->email}}</small>
                         </div>
                       </li>
 
@@ -153,12 +153,12 @@
                         </a>
                       </li>
                       <li>
-                        <a href="email-inbox.html">
+                        <a href="{{route('admin.contact.message')}}">
                           <i class="mdi mdi-email"></i> Message
                         </a>
                       </li>
                       <li>
-                        <a href="#"> <i class="mdi mdi-diamond-stone"></i> Projects </a>
+                        <a href="{{route('change.password')}}"> <i class="mdi mdi-diamond-stone"></i> Change Password </a>
                       </li>
                       <li>
                         <a href="#"> <i class="mdi mdi-settings"></i> Account Setting </a>
@@ -193,12 +193,12 @@
                   <footer class="footer mt-auto">
             <div class="copyright bg-white">
               <p>
-                &copy; <span id="copy-year">2019</span> Copyright Sleek Dashboard Bootstrap Template by
+                &copy; <span id="copy-year">2019</span> Copyright vikash template
                 <a
                   class="text-primary"
-                  href="http://www.iamabdus.com/"
+                  href="http://www.google.com/"
                   target="_blank"
-                  >Abdus</a
+                  >vikash</a
                 >.
               </p>
             </div>

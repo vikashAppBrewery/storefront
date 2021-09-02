@@ -7,6 +7,7 @@ use App\Http\Controllers\BrandController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ChangePass;
 use App\Models\User;
 use App\Models\Multipic;
 use Illuminate\Support\Facades\DB;
@@ -137,3 +138,9 @@ Route::get('message/delete/{id}', [ContactController::class, 'AdminDeleteMessage
 Route::get('/contact', [ContactController::class, 'Contact'])->name('contact');
 
 Route::post('/contact/form', [ContactController::class, 'ContactForm'])->name('contact.form');
+
+// admnin profile 0banckend
+
+Route::get('/user/password', [ChangePass::class, 'Cpassword'])->name('change.password');
+
+Route::post('/password/update', [ChangePass::class, 'UpdatePassword'])->name('password.update');
