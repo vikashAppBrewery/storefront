@@ -124,9 +124,16 @@ Route::get('contact/delete/{id}', [ContactController::class, 'AdminDeleteContact
 
 Route::post('/admin/store/contact', [ContactController::class, 'AdminStoreContact'])->name('store.contact');
 
+Route::post('/update/contacts/{id}', [ContactController::class, 'AdminUpdateContact']);
+
 Route::get('contact/edit/{id}', [ContactController::class, 'AdminEditContact']);
 
+Route::get('/admin/contact/message', [ContactController::class, 'AdminContactMessage'])->name('admin.contact.message');
+
+Route::get('message/delete/{id}', [ContactController::class, 'AdminDeleteMessage']);
 
 // contact page - front
 
 Route::get('/contact', [ContactController::class, 'Contact'])->name('contact');
+
+Route::post('/contact/form', [ContactController::class, 'ContactForm'])->name('contact.form');

@@ -7,23 +7,25 @@
             <div class="card card-default">
                 <div class="card-header card-header-border-bottom">
                     <h2>Edit Home About </h2>
-                </div>
+                </div> 
                 <div class="card-body">
                 <form action="{{url('update/contacts/'.$contacts->id) }}" method="POST">
                         @csrf 
                         <div class="form-group">
-                            <label for="exampleFormControlInput1">About title</label>
-                            <input type="text" name="title" class="form-control" id="exampleFormControlInput1" value="{{$contacts -> address}}">
+                            <label for="exampleFormControlInput1">Contact Email</label>
+                            <input type="text" name="email" class="form-control" id="exampleFormControlInput1" value="{{$contacts -> email}}">
                             
                         </div>
                         <div class="form-group">
-                            <label for="exampleFormControlTextarea1">About Short Description</label>
-                            <textarea class="form-control" name="short_dis" id="exampleFormControlTextarea1" rows="3">{{$contacts -> email}}</textarea>
+                            <label for="exampleFormControlInput1">Contact phone no</label>
+                            <input type="text" name="phone" class="form-control" id="exampleFormControlInput1" value="{{$contacts -> phone}}">
+                            
                         </div>
                         <div class="form-group">
-                            <label for="exampleFormControlTextarea1">About Long Description</label>
-                            <textarea class="form-control" name="long_dis" id="exampleFormControlTextarea1" rows="3">{{$contacts -> phone}}</textarea>
+                            <label for="exampleFormControlTextarea1">Contact Address</label>
+                            <textarea class="form-control" name="address" id="exampleFormControlTextarea1" rows="3">{{$contacts -> address}}</textarea>
                         </div>
+                        
                         
                         <div class="form-footer pt-4 pt-5 mt-4 border-top">
                             <button type="submit" class="btn btn-primary btn-default">Submit</button>
